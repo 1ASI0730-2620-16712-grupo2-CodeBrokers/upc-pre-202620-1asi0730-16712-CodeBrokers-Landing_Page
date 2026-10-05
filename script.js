@@ -3,6 +3,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const languageButtons = document.querySelectorAll('[data-language-option]');
     const body = document.body;
     let currentLanguage = 'es';
+    const applicationRoutes = {
+        profesionales: 'https://vitalink-opal.vercel.app/#/professional',
+        pacientes: 'https://vitalink-opal.vercel.app/#/family'
+    };
 
     const i18n = {
         es: {
@@ -187,6 +191,7 @@ document.addEventListener('DOMContentLoaded', () => {
         setAudienceButton(document.querySelector('[data-audience-option="profesionales"]'), 'stethoscope', text.audience[0]);
         setAudienceButton(document.querySelector('[data-audience-option="pacientes"]'), 'family_home', text.audience[1]);
         setText('#header-cta-btn', text.headerCta[isFamily ? 1 : 0]);
+        document.querySelector('#header-cta-btn')?.setAttribute('href', applicationRoutes[isFamily ? 'pacientes' : 'profesionales']);
 
         setHTML('.view-profesionales h1', text.heroPro[0]);
         setText('.view-profesionales p', text.heroPro[1]);
@@ -243,6 +248,7 @@ document.addEventListener('DOMContentLoaded', () => {
         setHTML('#cta-title', cta[0]);
         setText('#cta-desc', cta[1]);
         setHTML('#cta-action-btn', cta[2]);
+        document.querySelector('#cta-action-btn')?.setAttribute('href', applicationRoutes[isFamily ? 'pacientes' : 'profesionales']);
 
         setText('.footer-brand p', text.footer[0]);
         setAllText('.footer-links-col h4', text.footer.slice(1, 4));
