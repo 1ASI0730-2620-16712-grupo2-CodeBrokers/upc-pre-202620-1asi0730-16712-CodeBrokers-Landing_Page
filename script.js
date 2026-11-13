@@ -10,7 +10,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const i18n = {
         es: {
-            nav: ['Ventajas Clínicas', 'Alertas', 'Planes', 'Seguridad'],
+            nav: ['Ventajas Clínicas', 'Alertas', 'Planes', 'Seguridad', 'Video'],
+            productVideo: ['Conoce VitaLink en video', 'Descubre cómo VitaLink conecta a profesionales de salud, familias y adultos mayores en un mismo seguimiento preventivo.', 'Video About-the-Product de VitaLink'],
+            teamVideo: ['Equipo de desarrollo', 'Conoce al equipo CodeBrokers y el trabajo detrás de VitaLink.', 'Video About-the-Team del equipo CodeBrokers'],
             audience: ['Médicos', 'Familiares'],
             headerCta: ['Unirme como proveedor', 'Comenzar Plan Familiar'],
             heroPro: ['Optimice el seguimiento preventivo con <span class="highlight-text">monitoreo de precisión 24/7.</span>', 'Reduzca reingresos hospitalarios y mejore el control de pacientes crónicos con alertas en tiempo real e integración con su flujo clínico. Tome decisiones con datos de alta frecuencia en una sola plataforma.', 'Unirme como proveedor <span class="material-symbols-outlined">arrow_forward</span>', 'Solicitar información técnica'],
@@ -69,7 +71,9 @@ document.addEventListener('DOMContentLoaded', () => {
             footer: ['Cuidando conexiones, transformando la salud mediante tecnologia de prevencion continua.', 'Navegacion', 'Legal & Privacidad', 'Contacto', 'Ventajas Clinicas', 'Alertas Inteligentes', 'Planes', 'Seguridad', 'Privacidad', 'Terminos de Servicio', 'Aviso Legal', 'Cumplimiento HIPAA', '© 2026 VitaLink. Todos los derechos reservados. Desarrollado con los mas altos estandares de salud digital.']
         },
         en: {
-            nav: ['Clinical Benefits', 'Alerts', 'Plans', 'Security'],
+            nav: ['Clinical Benefits', 'Alerts', 'Plans', 'Security', 'Video'],
+            productVideo: ['Discover VitaLink on video', 'See how VitaLink connects healthcare professionals, families, and older adults in one preventive follow-up.', 'VitaLink About-the-Product video'],
+            teamVideo: ['Development team', 'Meet the CodeBrokers team and the work behind VitaLink.', 'CodeBrokers About-the-Team video'],
             audience: ['Clinicians', 'Families'],
             headerCta: ['Join as provider', 'Start Family Plan'],
             heroPro: ['Optimize preventive follow-up with <span class="highlight-text">24/7 precision monitoring.</span>', 'Reduce hospital readmissions and improve chronic patient control with real-time alerts and clinical workflow integration. Make decisions with high-frequency data in one platform.', 'Join as provider <span class="material-symbols-outlined">arrow_forward</span>', 'Request technical info'],
@@ -224,6 +228,13 @@ document.addEventListener('DOMContentLoaded', () => {
         setText('#alertas .alert-info h2', text.alerts[0]);
         setText('#alertas .section-subtitle', text.alerts[1]);
         setTwoLineCards('#alertas .features-list li', text.alertFeatures);
+
+        setText('#video-producto .section-header h2', text.productVideo[0]);
+        setText('#video-producto .section-header p', text.productVideo[1]);
+        document.querySelector('#video-producto iframe')?.setAttribute('title', text.productVideo[2]);
+        setText('#equipo-desarrollo .section-header h2', text.teamVideo[0]);
+        setText('#equipo-desarrollo .team-video-intro', text.teamVideo[1]);
+        document.querySelector('#equipo-desarrollo iframe')?.setAttribute('title', text.teamVideo[2]);
 
         const pricing = isFamily ? text.pricingFamily : text.pricingPro;
         setText('#pricing-title', pricing[0]);

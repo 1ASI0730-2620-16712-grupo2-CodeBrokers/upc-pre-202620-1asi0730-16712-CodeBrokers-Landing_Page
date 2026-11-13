@@ -2131,6 +2131,51 @@ body[data-audience="pacientes"] .badge-view {
 /* ==========================================================================
    SECCIÓN EQUIPO DE DESARROLLO
    ========================================================================== */
+.video-section {
+    padding: 88px 0;
+    background-color: var(--bg-surface);
+}
+
+.video-frame {
+    position: relative;
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+    aspect-ratio: 16 / 9;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    background-color: var(--dark-surface);
+}
+
+.video-frame iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.team-video {
+    max-width: 800px;
+    margin-bottom: 56px;
+}
+
+.team-section .team-video-intro {
+    margin-top: -32px;
+    margin-bottom: 32px;
+}
+
+@media (max-width: 768px) {
+    .video-section {
+        padding: 56px 0;
+    }
+
+    .video-frame {
+        border-radius: var(--radius-md);
+    }
+}
+
 .team-section {
     padding: 72px 0;
     background-color: var(--bg-surface);
